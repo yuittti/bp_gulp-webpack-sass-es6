@@ -27,7 +27,7 @@ var path = {
 		style: 'css/',
 		js: 'js/',
 		sprite: 'images/',
-		spriteName: '../images/nxte-sprite.png'
+		spriteName: '../images/sprite.png'
 	},
 	src:   {
 		style: ['src/scss/**/*.scss'],
@@ -51,7 +51,7 @@ const onError = function(err) {
 
 gulp.task('webserver', function (cb) {
 	bs.init({
-		proxy: "localhost/Cadeau_Concepten/CACO1710-Boeken.nl",
+		proxy: "localhost/projectName",
 		browser: 'chromium-browser',
 		// browser: 'firefox',
 		socket: {
