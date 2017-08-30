@@ -1,0 +1,257 @@
+.articles-container {
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	
+
+	.node--type-article {
+		width: 100%;
+		max-width: 293px;
+		margin-left: auto;
+		margin-right: auto;
+		height: auto;
+		margin-bottom: 22px;
+
+		border: 1px solid $gray;
+		border-radius: $radius;
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+
+		@include min-media($min-width-sm) {
+			width: 47%;
+			height: 545px;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		@include min-media($min-width-md) {
+			width: 32%;
+			height: 545px;
+		}
+
+		@include min-media($min-width-lg) {
+			width: 23.790323%;
+			height: 545px;
+		}
+
+		// &:nth-last-of-type(8n),
+		&:nth-of-type(10n+3),
+		&:nth-of-type(10n+8) {
+			width: 100%;
+			
+
+			@include min-media($min-width-sm) {
+				width: 47%;
+				height: 545px;
+			}
+
+			@include min-media($min-width-md) {
+				width: 32%;
+				height: 545px;
+			}
+			
+			@include min-media($min-width-lg) {
+				width: 49.275%;
+				height: 545px;
+				max-width: 100%;
+			}
+
+			.title__in-list {
+				width: 85%;
+				height: 64px;
+				margin-bottom: 32px;
+				
+				a {
+					font-size: 22px;
+					@include lh(22, 32);
+				}
+			}
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			border: 1px solid $black;
+			transition: $time border linear;
+		}
+
+		.field--name-field-front-image {
+			font-size: 0;
+			height: 200px;
+			overflow: hidden;
+			width: 100%;
+
+			a {
+				display: block;
+				background: $white;
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				transform: scale(1, 1);
+				transition: transform $time/2 linear;
+
+				img {
+					@include object-fit(cover);
+					display: block;
+					width: 100%;
+					transition: opacity 0.1s linear;
+					opacity: 1;
+				}
+
+				&:hover,
+				&:focus,
+				&:active {
+					img {
+						transition: opacity 0.1s linear;
+						opacity: .85;
+					}
+				}
+			}
+		}
+
+		.short-desc__in-list {
+			height: calc(100% - 200px);
+			padding: 15px 15px 21px 15px;
+
+			@include min-media($min-width-xl) {
+				padding: 21px 21px 31px 21px;
+			}
+		}
+
+		.title__in-list {
+			text-align: center;
+			width: 100%;
+			height: 78px;
+			overflow: hidden;
+			margin-bottom: 18px;
+			margin-left: auto;
+			margin-right: auto;
+
+			@include min-media($min-width-xl) {
+				width: 95%;
+			}
+			
+			a {
+				@include font-1(400);
+				font-size: 15px;
+				@include lh(15, 21);
+				color: $black-1;
+				text-align: center;
+				text-decoration: none;
+
+				&:hover,
+				&:focus,
+				&:active {
+					text-decoration: none;
+					color: lighten($black-1, 30%);
+					transition: $time ease;
+				}
+
+				@include min-media($min-width-xl) {
+					
+					font-size: 16px;
+					@include lh(16, 26);
+				}
+			}
+		}
+
+		.short-info__in-list {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 18px;
+			@include font-0(400);
+			font-size: 14px;
+			@include lh(14, 26);
+
+			.field--name-node-post-date {
+				color: $gray-light;
+				text-transform: lowercase;
+				margin-right: 18px;
+				position: relative;
+
+				&:before {
+					content: "•";
+					display: block;
+					position: absolute;
+					right: -10px;
+				}
+			}
+
+			.field--name-field-article-type {
+				
+				&.article-type-nieuws {
+					.field {
+						a {
+							color: $blue;
+
+							&:hover,
+							&:focus,
+							&:active {
+								color: darken($blue, 20%);
+								transition: $time linear color;
+							}
+						}
+					}
+				}
+				
+				&.article-type-interview {
+					.field {
+						a {
+							color: $yellow;
+
+							&:hover,
+							&:focus,
+							&:active {
+								color: darken($yellow, 20%);
+								transition: $time linear color;
+							}
+						}
+					}
+				}
+				
+				&.article-type-blog {
+					.field {
+						a {
+							color: $red;
+
+							&:hover,
+							&:focus,
+							&:active {
+								color: darken($red, 20%);
+								transition: $time linear color;
+							}
+						}
+					}
+				}
+
+
+			}
+		}
+
+		.field--name-body {
+			@include font-0(400);
+			font-size: 14px;
+			@include lh(14, 26);
+			color: $black;
+			height: 104px;
+			overflow: hidden;
+			text-align: center;
+			margin-bottom: 21px;
+		}
+
+		.field--name-field-full-article-link-text {
+			text-align: center;
+
+			& > a {
+				@extend .btn;
+				padding: 0;
+				width: 119px;
+			}
+		}
+
+	}
+}

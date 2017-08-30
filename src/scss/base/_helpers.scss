@@ -1,0 +1,56 @@
+.clearfix:after {
+	content: " ";
+}
+
+.f-left, .fleft {
+	float: left !important;
+}
+
+.f-right, .fright {
+	float: right !important;
+}
+
+.inline {
+	display: inline;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.block {
+	display: block;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.hide {
+	overflow: hidden;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.fullwidth {
+	width: 100%;
+}
+
+.fullheight {
+	height: 100%;
+}
+
+.fullsize {
+	width: 100%;
+	height: 100%;
+}
+
+.underline {
+	text-decoration: underline !important;
+}
+
+.flex {
+	display: flex;
+}

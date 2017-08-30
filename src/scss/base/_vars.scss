@@ -1,0 +1,79 @@
+// Grid
+
+$gutter-width: 22px;
+$breakpoint-offset: 17px;
+
+// $columns-count-xs: 4;
+// $columns-count-sm: 6;
+// $columns-count-md: 9;
+// $columns-count-lg: 12;
+// $columns-count-xl: 15;
+
+$container-width-xs: 100%;
+$container-width-sm: 544px;
+$container-width-md: 768px;
+$container-width-lg: 1024px;
+$container-width-xl: 1240px;
+
+// $min-width-xs: $container-width-xs + $breakpoint-offset + $gutter-width;
+$min-width-sm: $container-width-sm + $breakpoint-offset + $gutter-width;
+$min-width-md: $container-width-md + $breakpoint-offset + $gutter-width;
+$min-width-lg: $container-width-lg + $breakpoint-offset + $gutter-width;
+$min-width-xl: $container-width-xl + $breakpoint-offset + $gutter-width;
+
+
+// Colors
+
+$white-1: #fefefd;
+
+$blue-1: #005ba8;
+$blue-light: #d0e3f4;
+
+$green-bg: #17c51b;
+
+$gray-1: #818181;
+$blue-hover: #2789ce;
+
+$rose: #9c163a;
+$rose-1: #e6007e;
+$rose-light: #f9e3ea;
+$rose-light: #f5d1dd;
+
+// new colors
+$black: #000;
+$black-1: #010101;
+$white: #ffffff;
+$gray: #dbdbdb;
+$gray-light: #949393;
+$yellow: #fdc311;
+$red: #e5313f;
+$blue: #4a9bd5;
+$green: #46ae4d;
+
+
+
+// Fonts
+$font0: 'Montserrat', sans-serif;
+$font1: 'Sanchez', sans-serif;
+$font2: 'Gibson', sans-serif;
+
+@mixin font($ff, $fw) {
+	font-family: $ff;
+	font-weight: $fw;
+}
+
+@mixin font-0($fw) {
+	@include font($font0, $fw);
+}
+
+@mixin font-1($fw) {
+	@include font($font1, $fw);
+}
+
+@mixin font-2($fw) {
+	@include font($font2, $fw);
+}
+
+// Other
+$time: .2s;
+$radius: 5px;

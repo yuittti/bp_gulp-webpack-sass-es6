@@ -1,0 +1,34 @@
+.container {
+	width: $container-width-xs;
+  padding-left: $gutter-width/2;
+  padding-right: $gutter-width/2;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+
+  @include min-media($min-width-sm) {
+    width: $container-width-sm + $gutter-width;
+  }
+  @include min-media($min-width-md) {
+    width: $container-width-md + $gutter-width;
+  }
+  @include min-media($min-width-lg) {
+    width: $container-width-lg + $gutter-width;
+  }
+  @include min-media($min-width-xl) {
+    width: $container-width-xl + $gutter-width;
+  }
+}
+
+.row {
+  margin-right: -$gutter-width/2;
+  margin-left: -$gutter-width/2;
+}
+
+.col {
+  position: relative;
+  min-height: 1px;
+  padding-right: $gutter-width/2;
+  padding-left: $gutter-width/2;
+  float: left;
+}

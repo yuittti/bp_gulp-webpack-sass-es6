@@ -1,0 +1,35 @@
+@mixin cf() {
+	&:after {
+		content: " ";
+		clear: both;
+		display: table;
+	}
+}
+
+@mixin min-media($size) {
+	@if unitless($size) {
+		$size: unquote( $size + 'px' );
+	}
+	@media all and (min-width: $size) { @content; }
+}
+
+/*
+  object-fit with font-family: 'object-fit: ...' for IE
+	(for using with object-fit plugin)
+*/
+@mixin object-fit($fit: fill, $position: null){
+	object-fit: $fit;
+  @if $position {
+		object-position: $position;
+  	font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+  	font-family: 'object-fit: #{$fit}';
+  }
+}
+
+/*
+	get relative line-height based on font size and line height in px
+*/
+@mixin lh($fsize, $lheight) {
+  line-height: $lheight / $fsize;
+}

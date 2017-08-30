@@ -1,0 +1,205 @@
+.page-node-type-article,
+.page-node-type-page {
+
+  .block-backbutton {
+    margin-bottom: 40px;
+
+    @include min-media($min-width-lg) {
+      margin-bottom: 85px;
+    }
+
+    a {
+      @extend .btn;
+    }
+    
+  }
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include min-media($min-width-lg) {
+      flex-direction: row;
+    }
+
+    .block-page-title-block {
+      padding-bottom: 20px;
+    }
+
+    .page-title {
+      color: $black-1;
+      font-size: 30px;
+      line-height: 40px;
+      text-align: left;
+    }
+
+    // Article content
+    & > .section {
+      width: 100%;
+      position: relative;
+      padding-right: 0;
+      border-bottom: 1px solid $gray;
+
+      @include min-media($min-width-lg) {
+        width: 71%;
+        padding-right: 35px;
+        border-bottom: none;
+      }
+
+      @include min-media($min-width-xl) {
+        padding-right: 65px;
+      }
+
+      &:before {
+        content: "";
+        display: none;
+        width: 1px;
+        position: absolute;
+        right: 0;
+        top: 45px;
+        bottom: 55px;
+        background: $gray;
+
+        @include min-media($min-width-lg) {
+          display: block;
+        }
+      }
+      
+    }
+    
+    // Article body
+    .node--type-article,
+    .node--type-page {
+      padding-bottom: 0;
+
+      @include min-media($min-width-lg) {
+        // padding-bottom: 55px;
+      }
+      
+      .group_article_info {
+        margin-bottom: 45px;
+
+        & > .field__item {
+          display: inline-block;
+          @include font-0(400);
+          font-size: 14px;
+          line-height: 26px;
+          margin-right: 20px;
+          color: $gray-light;
+          position: relative;
+
+          &:not(:nth-of-type(1)) {
+            &:before {
+              content: "•";
+              position: relative;
+              left: -12px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .field--name-field-front-image {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 5px;
+        font-size: 0;
+        margin-bottom: 20px;
+
+        @include min-media($min-width-sm) {
+          width: 50%;
+          float: right;
+          margin-left: 20px;
+        }
+
+        img {
+          width: 100%;
+          @include object-fit(cover);
+        }
+      }
+
+      .field--name-body {
+        p {
+          @include font-0(400);
+          font-size: 14px;
+          @include lh(14, 26);
+          color: $black;
+          margin-bottom: 30px;
+          
+          &:first-child {
+            font-size: 16px;
+            @include lh(16, 28);
+          }
+        }
+
+        h2, h3, h4 {
+          @include font-0(700);
+          font-size: 14px;
+          @include lh(14, 26);
+          color: $black;
+        }
+      }
+    }
+    // --end Article body
+
+    .node__sidebar-content {
+      width: 100%;
+      padding-top: 25px;
+      padding-bottom: 25px;
+
+      @include min-media($min-width-lg) {
+        width: 29%;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 30px;
+        padding-right: 12px;
+        margin-top: 90px;
+      }
+
+      @include min-media($min-width-xl) {
+        padding-left: 60px;
+      }
+
+      h2 {
+        @include font-1(400);
+        font-size: 24px;
+        @include lh(24, 40);
+        color: $green;
+        margin-bottom: 25px;
+      }
+
+      ul {
+        li {
+          padding-left: 8px;
+          position: relative;
+          margin-bottom: 15px;
+
+          &:before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            @include font-1(400);
+            font-size: 16px;
+            line-height: 1.5;
+            color: $black;
+          }
+
+          a {
+            @include font-1(400);
+            font-size: 16px;
+            @include lh(16, 26);
+            color: $black;
+
+            &:hover,
+            &:focus,
+            &:active {
+              text-decoration: underline;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.page {
+	&-wrapper {
+		background: $white-1;
+		
+		#page {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			min-height: 100vh;
+
+			#header {
+				flex-grow: 0;
+				flex-shrink: 1;
+			}
+
+			#main-wrapper {
+				flex-grow: 1;
+				flex-shrink: 0;
+			}
+
+			.site-footer {
+				flex-grow: 0;
+				flex-shrink: 1;
+			}
+		}	
+	}
+}
+
+.layout-container {
+	@extend .container;
+}

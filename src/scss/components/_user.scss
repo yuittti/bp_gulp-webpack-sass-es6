@@ -1,0 +1,97 @@
+.path-user {
+  .block-system-main-block,
+  .block-local-tasks-block {
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &.user-logged-in {
+    .block-system-main-block,
+    .block-local-tasks-block {
+      width: 100%;
+    }
+  }
+
+  form {
+    input[type=text],
+    input[type=email],
+    input[type=password] {
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 34px;
+      line-height: 32px;
+      border-radius: 5px;
+      border: 1px solid $black;
+      @include font-1(400);
+      font-size: 14px;
+      width: 100%;
+    }
+
+    input[type=submit] {
+      @extend .btn;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .form-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    label {
+      display: block;
+      width: 100%;
+      @include font-1(400);
+      font-size: 16px;
+      line-height: 1.25;
+      margin-bottom: 5px;
+    }
+
+    .description {
+      @include font-1(400);
+      font-size: 14px;
+      line-height: 1.25;
+      margin-top: 5px;
+      color: $gray-1;
+    }
+  }
+
+  .tabs {
+    ul {
+      border-bottom: 1px solid $blue;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      font-size: 0;
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      @include min-media($min-width-md) {
+        flex-direction: row;
+      }
+
+      li {
+        flex-basis: 20%;
+        height: inherit;
+        flex-grow: 1;
+
+        a {
+          @include font-1(400);
+          font-size: 16px;
+          color: $blue;
+          text-decoration: none;
+          padding: 10px 20px;
+          display: flex;
+          height: 60px;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

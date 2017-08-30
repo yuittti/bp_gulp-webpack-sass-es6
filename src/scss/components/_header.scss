@@ -1,0 +1,196 @@
+.header {
+	&-top {
+		width: 100%;
+		height: 45px;
+		border-bottom: 1px solid $gray;
+	}
+	&-bottom {
+		height: 100px;
+		
+		.region-header {
+			@extend .container;
+			border-bottom: 1px solid $gray;
+		}
+	}
+
+	.region-header {
+		height: inherit;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+
+		@include min-media($min-width-md) {
+			justify-content: space-between;
+		}
+
+
+		.menu--main-menu {
+			position: absolute;
+			left: 10px;
+			top: 47px;
+
+			@include min-media($min-width-md) {
+				position: static;
+			}
+			
+
+			.menu {
+				margin-left: 0;
+				font-size: 0;
+				position: fixed;
+				left: 0;
+			    width: 200px;
+			    max-width: 90%;
+	   			transform: translate3d(-100%,0,0);
+			    top: 0;
+			    background: $white;
+			    z-index: 99;
+			    height: 100vh;
+			    margin: 0;
+			    background: $black;
+				padding-top: 20px;
+				padding-bottom: 20px;
+		    
+
+				@include min-media($min-width-md) {
+					position: static;
+					background: transparent;
+					height: auto;
+					width: auto;
+					transform: none;
+					padding: 0;
+					max-width: none;
+					padding-top: 0;
+					padding-bottom: 0;
+				}
+
+				&._opened {
+					transition: .3s ease-in-out;
+					box-shadow: 3px 0 7px rgba(0,0,0,0.35);
+				}
+
+				&-item {
+					display: block;
+					margin-left: 0;
+					padding-top: 0;
+					padding-left: 18px;
+    			padding-right: 18px;
+
+					@include min-media($min-width-md) {
+						display: inline-block;
+						margin-left: 30px;
+						padding-left: 0;
+    				padding-right: 0;
+					}
+
+					a {
+						@include font-1(400);
+						font-size: 16px;
+						@include lh(16,30);
+						color: $white;
+						position: relative;
+						width: 100%;
+
+						@include min-media($min-width-md) {
+							color: $black;
+							width: auto;
+						}
+
+						&:hover,
+						&:focus,
+						&:active {
+							&:before {
+								transform: scalex(1);
+								transition: $time ease transform;
+							}
+						}
+
+						&:before {
+							content: "";
+							display: none;
+							width: 100%;
+							height: 1px;
+							background: $black;
+							transform: scalex(0);
+							transform-origin: left;
+							position: absolute;
+							left: 0;
+							bottom: 0;
+
+							@include min-media($min-width-md) {
+								display: block;
+							}
+						}
+					}
+				}
+
+				&-item--active {
+					a {
+						color: $red;
+						cursor: default;
+						pointer-events: none;
+
+						&:before {
+							display: none;
+						}
+					}
+				}
+			}
+
+			.menu-toggle {
+			
+				&-container {
+					display: inline-block;
+					width: 32px;
+					height: 28px;
+					position: absolute;
+					left: 0;
+					top: -11px;
+					cursor: pointer;
+				}
+
+				display: inline-block;
+				text-indent: -9999px;
+				width: 32px;
+				height: 6px;
+				background-color: $black;
+				position: absolute;
+				left: 0;
+				top: 11px;
+				transition: background-color .3s ease .5s;
+
+				&:before {
+					position: absolute;
+					left: 0;
+					top: -11px;
+					width: 32px;
+					height: 6px;
+					display: block;
+					content: "";
+					background-color: $black;
+					transition: top .5s ease .3s, transform .3s ease .1s, background-color .3s ease .1s, -webkit-transform .3s ease .1s;
+				}
+
+				&:after {
+					position: absolute;
+					left: 0;
+					bottom: -11px;
+					width: 32px;
+					height: 6px;
+					display: block;
+					content: "";
+					background-color: $black;
+					transition: bottom .5s ease .3s, transform .3s ease .1s, background-color .3s ease .1s, -webkit-transform .3s ease .1s;
+				}
+
+				@include min-media($min-width-md) {
+					display: none;
+				}
+			}
+		}
+
+		
+	}
+
+}

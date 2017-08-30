@@ -1,0 +1,119 @@
+// Main navigation line in header
+.nav {
+	&-main {
+		@include cf();
+		padding-top: 20px;
+
+		@include min-media($min-width-lg) {
+			padding-top: 40px;
+		}
+	}
+
+	&-left {
+		margin-bottom: 20px;
+
+		@include min-media($min-width-md) {
+			float: left;
+			margin-bottom: 0;
+		}
+		
+
+		.logo {
+			width: 257px;
+			margin: 0 auto;
+
+
+			h1 {
+				margin-bottom: 13px;
+				
+				// logo
+				img {
+					width: 257px;
+					height: 57px;
+					display: block;
+				}
+				
+				// visually hidden
+				span {
+					text-indent: -9999px;
+					position: absolute;
+					font-size: 0;
+				}
+				
+			}
+			
+			// txt under logo
+			&-txt {
+				@include font-0(300);
+				font-size: 15px;
+				line-height: 1em;
+				color: $rose;
+				text-align: center;
+				display: inline-block;
+				width: 100%;
+			}
+		}
+	}
+	
+	&-right {
+		@include min-media($min-width-md) {
+			float: right;
+		}
+	}
+
+	&-menu {
+
+		text-align: center;
+
+		&-item {
+			display: block;
+			margin: 10px;
+
+			@include min-media($min-width-sm) {
+				display: inline-block;
+				margin: 0 10px;
+			}
+
+			@include min-media($min-width-md) {
+				margin: 0;
+			}
+
+			a {
+				background: $white;
+				border: 1px solid $rose-1;
+				transition: $time ease-in;
+
+				display: inline-block;
+				vertical-align: middle;
+				height: 35px;
+				line-height: 33px;
+				color: $rose;
+				font-size: 16px;
+				padding: 0 14px;
+				@include font-0(600);
+				border-radius: 7px;
+				transition: $time/2 ease-in;
+
+				width: 130px;
+
+				@include min-media($min-width-sm) {
+					width: auto;
+				}
+
+				@include min-media($min-width-md) {
+					background: transparent;
+					border: 1px solid transparent;
+				}
+
+				&:hover,
+				&:focus,
+				&:active {
+					background: $white;
+					border: 1px solid $rose-1;
+					transition: $time ease-in;
+				}
+
+			}
+		}
+	}
+} // --main navigation in header

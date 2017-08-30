@@ -1,0 +1,38 @@
+{
+  "name": "CACO1710",
+  "version": "1.0.0",
+  "description": "CACO1710",
+  "main": "gulpfile.babel.js",
+  "scripts": {
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "author": "NXTE",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-ignore": "^2.0.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rimraf": "^0.2.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-shell": "^0.6.3",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-watch": "^4.3.11",
+    "imagemin-pngquant": "^5.0.0",
+    "path": "^0.12.7",
+    "rimraf": "^2.6.1",
+    "webpack": "^2.0.0",
+    "webpack-stream": "^3.2.0"
+  },
+  "dependencies": {
+    "object-fit-images": "^3.2.3"
+  }
+}
