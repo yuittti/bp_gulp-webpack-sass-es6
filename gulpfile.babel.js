@@ -75,16 +75,15 @@ gulp.task('clean', () => {
 });
 
 gulp.task('style:build', () => {
-	gulp.src(path.src.style)
+	return gulp.src(path.src.style)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
 		.pipe(sass())
 		.pipe(autoprefixer({ browsers: ['ie >= 9', 'last 10 versions'] }))
 		.pipe(cssmin())
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(path.build.style));
-
-	reload(path.build.style);
+		.pipe(gulp.dest(path.build.style))
+		.pipe(bs.stream({match: "**/*.css"}));
 });
 
 gulp.task('images:copy', () => {
@@ -100,9 +99,8 @@ gulp.task('images:copy', () => {
 });
 
 gulp.task('js:build', () => {
-  gulp
-	  .src(path.src.js)
-	  .pipe(webpackStream({
+	return gulp.src(path.src.js)
+		.pipe(webpackStream({
 			entry: {
 				main: './src/js/main.js'
 			},
@@ -115,10 +113,9 @@ gulp.task('js:build', () => {
 					{ test: /\.(js)$/, use: 'babel-loader' },
 				]
 			}
-	  }, webpack2))
-	  .pipe(gulp.dest(path.build.js));
-
-  reload(path.build.js);
+		}, webpack2))
+		.pipe(gulp.dest(path.build.js))
+		.pipe(bs.reload({match: "**/*.js"}));
 });
 
 gulp.task('build', [
